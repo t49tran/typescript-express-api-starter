@@ -1,6 +1,9 @@
+// tslint:disable-next-line:no-submodule-imports no-var-requires
+require('module-alias/register');
+
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
-import { MONGODB_URI } from './utils/secret';
+import { MONGODB_URI } from 'src/utils/secret';
 
 mongoose.Promise = global.Promise;
 if (MONGODB_URI) {
