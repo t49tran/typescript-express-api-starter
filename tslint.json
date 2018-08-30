@@ -19,7 +19,7 @@
     ],
     "no-var-keyword": true,
     "one-line": [true, "check-open-brace", "check-whitespace"],
-    "quotemark": [true, "single", "jsx-double"],
+    "quotemark": [true, "single"],
     "semicolon": [true, "always", "ignore-bound-class-methods"],
     "triple-equals": [true, "allow-null-check"],
     "typedef-whitespace": [
@@ -56,6 +56,8 @@
       "check-type"
     ],
     "object-literal-sort-keys": false,
-    "member-access": false
+    "member-access": false,
+    "no-submodule-imports": [true, ["src"]],
+    "no-implicit-dependencies": [true, ["src"]]
   }
 }
