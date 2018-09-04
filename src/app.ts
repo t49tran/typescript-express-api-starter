@@ -3,6 +3,7 @@ require('module-alias/register');
 
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
+import { movieRoutes } from 'src/controllers/movie';
 import { MONGODB_URI } from 'src/utils/secret';
 
 mongoose.Promise = global.Promise;
@@ -29,5 +30,7 @@ app.get('/', (req: Request, res: Response) => {
     message: 'ready'
   });
 });
+
+app.use('/movie', movieRoutes);
 
 export { app };
