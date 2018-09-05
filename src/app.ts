@@ -1,8 +1,10 @@
 // tslint:disable-next-line:no-submodule-imports no-var-requires
 require('module-alias/register');
 
+import * as bodyParser from 'body-parser';
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
+import { authRoutes } from 'src/controllers/auth';
 import { movieRoutes } from 'src/controllers/movie';
 import { MONGODB_URI } from 'src/utils/secret';
 
@@ -24,6 +26,8 @@ if (MONGODB_URI) {
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req: Request, res: Response) => {
   return res.json({
@@ -31,6 +35,7 @@ app.get('/', (req: Request, res: Response) => {
   });
 });
 
+app.use('/', authRoutes);
 app.use('/movie', movieRoutes);
 
 export { app };
