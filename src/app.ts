@@ -3,6 +3,7 @@ require('module-alias/register');
 
 import * as bodyParser from 'body-parser';
 import express, { Request, Response } from 'express';
+import helmet from 'helmet';
 import mongoose from 'mongoose';
 import { authRoutes } from 'src/controllers/auth';
 import { movieRoutes } from 'src/controllers/movie';
@@ -26,6 +27,8 @@ if (MONGODB_URI) {
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
+
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
