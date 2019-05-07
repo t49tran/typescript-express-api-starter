@@ -14,21 +14,20 @@
     "@types/helmet": "0.0.42",
     "@types/jsonwebtoken": "7.2.8",
     "@types/mongoose": "5.2.7",
-    "@types/winston": "2.4.4",
     "nodemon": "1.18.3",
-    "tslint": "5.11.0",
+    "tslint": "5.16.0",
     "tslint-config-prettier": "1.15.0",
-    "typescript": "3.0.1"
+    "typescript": "3.4.1"
   },
   "dependencies": {
     "body-parser": "1.18.3",
     "dotenv": "6.0.0",
-    "express": "4.16.3",
+    "express": "4.16.4",
     "helmet": "3.14.0",
     "jsonwebtoken": "8.3.0",
     "module-alias": "2.1.0",
-    "mongoose": "5.2.9",
-    "winston": "3.0.0"
+    "mongoose": "5.5.6",
+    "winston": "3.2.1"
   },
   "_moduleAliases": {
     "src": "dist"
